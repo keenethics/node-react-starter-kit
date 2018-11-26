@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Textfield from './textfield';
+import Textfield from './Textfield';
 
 test('Render textfield without any props', () => {
   const component = renderer.create(
