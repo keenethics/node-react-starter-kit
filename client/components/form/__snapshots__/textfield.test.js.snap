@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render disable textfield 1`] = `
+<input
+  autoComplete="off"
+  className="textfield disabled"
+  defaultValue=""
+  disabled={true}
+  id="textfield-id"
+  name={null}
+  onChange={null}
+  placeholder=""
+  tabIndex={null}
+  type="text"
+/>
+`;
+
+exports[`Render textfield with placeholder 1`] = `
+<input
+  autoComplete="off"
+  className="textfield"
+  defaultValue=""
+  disabled={false}
+  id="textfield-id"
+  name={null}
+  onChange={null}
+  placeholder=""
+  tabIndex={null}
+  type="text"
+/>
+`;
+
+exports[`Render textfield without any props 1`] = `
+<input
+  autoComplete="off"
+  className="textfield"
+  defaultValue=""
+  disabled={false}
+  id="textfield-id"
+  name={null}
+  onChange={null}
+  placeholder=""
+  tabIndex={null}
+  type="text"
+/>
+`;
