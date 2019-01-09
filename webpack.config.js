@@ -47,6 +47,10 @@ module.exports = (env, argv) => {
             'sass-loader',
           ],
         },
+        {
+          test: /locales/,
+          loader: '@alienfast/i18next-loader',
+        },
       ],
     },
     resolve: {

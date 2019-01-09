@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withNamespaces } from 'react-i18next';
 
 import {
   Form,
@@ -42,6 +44,7 @@ class FormComponents extends Component {
   }
 
   render() {
+    const { t } = this.props;
     const {
       name,
       password,
@@ -55,11 +58,11 @@ class FormComponents extends Component {
         <Form onSubmit={() => {}}>
           <Fieldset>
             <Label htmlFor="textfield-username">
-              Username
+              {t('form.username.label')}
             </Label>
             <Textfield
               id="textfield-username"
-              placeholder="Unique username"
+              placeholder={t('form.username.placeholder')}
               name="name"
               value={name}
               onChange={this.onChange}
@@ -137,4 +140,8 @@ class FormComponents extends Component {
   }
 }
 
-export default FormComponents;
+FormComponents.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withNamespaces()(FormComponents);
