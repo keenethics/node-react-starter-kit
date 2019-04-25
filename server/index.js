@@ -9,8 +9,13 @@ const methodOverride = require('method-override');
 const Swagger = require('./swagger');
 
 const routes = require('./routes/index.route');
+const CustomError = require('./utils/error');
+const errorHandler = require('./middlewares/error');
 
 require('dotenv-safe').config();
+
+global.Kit = {};
+Kit.CustomError = CustomError;
 
 const app = express();
 app.db = require('./models');
@@ -32,6 +37,8 @@ if (!isProduction) {
 }
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, `../${isProduction ? 'dist' : 'client'}/index.html`)));
+
+app.use(errorHandler);
 
 const port = process.env.APP_PORT || 3001;
 const host = process.env.APP_HOST || 'localhost';

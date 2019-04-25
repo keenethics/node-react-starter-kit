@@ -4,6 +4,9 @@
     "airbnb",
     "plugin:jsx-a11y/recommended"
   ],
+  "globals": {
+    "Kit": true
+  },
   "env": {
     "node": true,
     "browser": true,
