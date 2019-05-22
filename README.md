@@ -86,6 +86,14 @@ Command to run API tests:
 ```bash
 npm run test-server
 ```
+API test check:
+- creating new user and return right data;
+- not creating user if email is already used;
+- not creating user without password;
+- retrieving access and refreshing tokens;
+- not login with invalid email;
+- not login with invalid password (empty or wrong);
+- getting list of users with default user only;
 
 Instruments used for API tests: [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/)
 
@@ -103,11 +111,13 @@ We use ARIA (Accessible Rich Internet Applications) Landmark roles and attribute
 
 ## PWA features
 
+## Git Hooks
+
 ### Service worker
 
 There's sample code for adding service worker to your app. You just need to uncomment it (one part of it is in webpack config and another one is in index.js).
 
-Service worker file is generated and connected via [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). 
+Service worker file is generated and connected via [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin).
 
 ## Swagger
 
