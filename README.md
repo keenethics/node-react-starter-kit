@@ -18,8 +18,9 @@ Install the project dependencies:
 ```bash
 npm i
 ```
-
-Create `.env` file from example and make sure it has correct values:
+Download and install [PostgreSQL](https://www.postgresql.org/download/)
+Create database
+Create `.env` file from example and make sure URL has correct values for user(your DB user), pass(password for your DB user), port(where your server running) and DB name:
 
 ```bash
 cp .env.example .env
