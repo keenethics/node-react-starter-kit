@@ -18,8 +18,9 @@ Install the project dependencies:
 ```bash
 npm i
 ```
-
-Create `.env` file from example and make sure it has correct values:
+Download and install [PostgreSQL](https://www.postgresql.org/download/)
+Create database
+Create `.env` file from example and make sure URL has correct values for user(your DB user), pass(password for your DB user), port(where your server running) and DB name:
 
 ```bash
 cp .env.example .env
@@ -103,11 +104,17 @@ We use ARIA (Accessible Rich Internet Applications) Landmark roles and attribute
 
 ## PWA features
 
+## Git Hooks
+
+We use two git hooks:
+1. pre-commit hook runs `npm run lint`;
+2. pre-push hook runs `npm run test-server`;
+
 ### Service worker
 
 There's sample code for adding service worker to your app. You just need to uncomment it (one part of it is in webpack config and another one is in index.js).
 
-Service worker file is generated and connected via [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). 
+Service worker file is generated and connected via [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin).
 
 ## Swagger
 
