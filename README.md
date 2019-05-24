@@ -87,14 +87,6 @@ Command to run API tests:
 ```bash
 npm run test-server
 ```
-API test check:
-- creating new user and return right data;
-- not creating user if email is already used;
-- not creating user without password;
-- retrieving access and refreshing tokens;
-- not login with invalid email;
-- not login with invalid password (empty or wrong);
-- getting list of users with default user only;
 
 Instruments used for API tests: [SuperTest](https://github.com/visionmedia/supertest), [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/)
 
@@ -113,6 +105,16 @@ We use ARIA (Accessible Rich Internet Applications) Landmark roles and attribute
 ## PWA features
 
 ## Git Hooks
+
+We use two git hooks:
+1. pre-commit hook run after type command "git commit", but before you type a commit message. It runs linter via
+```bash
+npm run test-server
+```
+2. pre-push hook runs during "git push", after the remote refs have been updated but before any objects have been transferred. It runs tests via
+```bash
+npm run test-server
+```
 
 ### Service worker
 
