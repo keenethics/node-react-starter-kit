@@ -109,7 +109,7 @@ We use ARIA (Accessible Rich Internet Applications) Landmark roles and attribute
 We use two git hooks:
 1. pre-commit hook run after type command "git commit", but before you type a commit message. It runs linter via
 ```bash
-npm run test-server
+npm run lint
 ```
 2. pre-push hook runs during "git push", after the remote refs have been updated but before any objects have been transferred. It runs tests via
 ```bash
