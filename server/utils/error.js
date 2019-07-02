@@ -10,6 +10,7 @@ const defaultError = {
   value: '',
   message: 'Something went wrong.',
   userMessage: 'Something went wrong.',
+  httpCode: 500,
 };
 
 class CustomError extends Error {
@@ -32,7 +33,7 @@ class CustomError extends Error {
   constructor(errorCode, httpCode, ...params) {
     super(params);
     this.errors = [CustomError.createError(errorCode)];
-    this.code = httpCode || this.errors[0].code;
+    this.code = httpCode || this.errors[0].httpCode;
     this.message = this.errors[0].message;
     this.name = 'Server error';
     this.request = {};
