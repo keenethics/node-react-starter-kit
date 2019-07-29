@@ -15,6 +15,9 @@ const Navigation = () => (
         <li role="menuitem">
           <NavLink to="/form-components">Form components</NavLink>
         </li>
+        <li role="menuitem">
+          <NavLink to="/example-components">Example page</NavLink>
+        </li>
       </ul>
     </div>
   </nav>

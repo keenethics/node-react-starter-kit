@@ -5,6 +5,7 @@ import MainLayout from 'Layout/Main';
 
 import Index from 'Pages/Index';
 import FormComponents from 'Pages/FormComponents';
+import ExampleComponents from 'Pages/Example';
 import NoMatch from 'Pages/NoMatch';
 
 const Routes = () => (
@@ -13,6 +14,7 @@ const Routes = () => (
       <Switch>
         <Route path="/" component={Index} exact />
         <Route path="/form-components" component={FormComponents} />
+        <Route path="/example-components" component={ExampleComponents} />
         <Route component={NoMatch} />
       </Switch>
     </MainLayout>
