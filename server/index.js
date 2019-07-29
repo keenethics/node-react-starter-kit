@@ -6,6 +6,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const methodOverride = require('method-override');
+const Sentry = require('@sentry/node');
 const Swagger = require('./swagger');
 
 const routes = require('./routes/index.route');
@@ -16,6 +17,8 @@ require('dotenv-safe').config();
 
 global.Kit = {};
 Kit.CustomError = CustomError;
+
+Sentry.init({ dsn: process.env.SENTRY_DSN });
 
 const app = express();
 app.db = require('./models');
@@ -35,9 +38,14 @@ app.use('/api', routes);
 if (!isProduction) {
   Swagger(app);
 }
+// REMOVE_PROD: in real app you need remove this route
+app.get('/debug-sentry', () => {
+  throw new Kit.CustomError();
+});
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname, `../${isProduction ? 'dist' : 'client'}/index.html`)));
 
+app.use(Sentry.Handlers.errorHandler());
 app.use(errorHandler);
 
 const port = process.env.APP_PORT || 3001;

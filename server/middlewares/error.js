@@ -3,7 +3,7 @@ function errorHandling(err, req, res, next) {
     return next(err);
   }
 
-  res.status(err.code);
+  res.status(err.httpCode);
   return res.json(err.get());
 }
 
